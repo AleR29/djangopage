@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Ticket</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body class="bg-light">
+
+    <style>
+        .custom-green-bg {
+            background-color: #5D6D7E;
+        }
+        .custom-btn {
+        background-color:#5D6D7E;
+        color: #fff; 
+    }
+    .custom-btn:hover {
+        background-color: #AEB6BF;
+    }
+    </style>
+
+    <header class="custom-green-bg text-dark text-center py-3">
+        <h1 class="text-white">Ingreso de Tickets</h1>
+    </header>
+
+    <div class="container mt-5">
+        <div class="text-center">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn custom-btn mt-3">Guardar</button>
+            </form>
+        </div>
+    </div>
+        
+
+        <!--
+        <h2>Tickets Registrados:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Usuario</th>
+                    <th>Área</th>
+                    <th>Descripción</th>
+                    <th>Estado</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <body>
+                {% for tick in tickets %}
+                    <tr>
+                        <td>{{ tick.id }}</td>
+                        <td>{{ tick.nombre_usuario }}</td>
+                        <td>{{ tick.area }}</td>
+                        <td>{{ tick.descripcion }}</td>
+                        <td>{{ tick.estado }}</td>
+                        <td>{{ tick.fecha }}</td>
+                    </tr>
+                {% endfor %}
+            </body>
+        </table>
+        -->
+
+</body>
+</html>
